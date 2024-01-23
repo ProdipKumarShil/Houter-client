@@ -7,7 +7,7 @@ const Navbar = () => {
         <Link to='/' className="btn btn-ghost text-xl mr-10">Houter</Link>
         <div className="md:flex flex-row gap-5 hidden ">
           <Link >For Sale</Link>
-          <Link to='/allHomes'>For Rent</Link>
+          <Link to='/allHouse'>For Rent</Link>
           <Link >Daily Rental</Link>
           <Link >Projects</Link>
         </div>

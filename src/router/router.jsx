@@ -3,7 +3,8 @@ import App from "../App";
 import Home from "../pages/Home/Home";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
-import AllHomes from "../pages/AllHomes/AllHomes";
+import AllHouse from "../pages/AllHouse/AllHouse";
+import SingleHouse from "../pages/SingleHouse/SingleHouse";
 
 export const router = createBrowserRouter([
   {
@@ -16,8 +17,12 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'allHomes',
-        element: <AllHomes />
+        path: 'allHouse',
+        element: <AllHouse />
+      },
+      {
+        path: 'house/:id',
+        element: <SingleHouse />
       },
       {
         path: 'signIn',

@@ -1,7 +1,6 @@
-import React from 'react'
 import FeatureCard from '../../components/Feature/FeatureCard'
 
-const AllHomes = () => {
+const AllHouse = () => {
   return (
     <div className='max-w-screen-xl mx-auto p-4'>
       <p className='text-[24px] font-medium mt-7 mb-5'>Apartment for rental</p>
@@ -22,4 +21,4 @@ const AllHomes = () => {
   )
 }
 
-export default AllHomes
+export default AllHouse
