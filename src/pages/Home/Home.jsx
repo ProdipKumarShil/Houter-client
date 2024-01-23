@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <HomeMap />
       <Feature />
+      <HomeMap />
     </>
   )
 }
