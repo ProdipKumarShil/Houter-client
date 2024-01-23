@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* img  */
+.carousel .slider .slide div img{
+  height: 400px;
+}
+
+/* thumb img */
+.carousel .thumb img {
+  width: 200px !important;
+  height: 100px !important;
+}
+.carousel .thumbs li{
+  width: 200px !important;
+}

@@ -1,9 +1,21 @@
 import location from "../../assets/icons/location.svg";
 import tick from "../../assets/icons/tick.svg";
-import phone from '../../assets/icons/phone.svg';
-import message from '../../assets/icons/message.svg';
+import phone from "../../assets/icons/phone.svg";
+import message from "../../assets/icons/message.svg";
+import img from "../../assets/home/bg.jpg";
+import img2 from "../../assets/home/building.jpg";
+import img3 from "../../assets/home/cardPic.png";
+import img4 from "../../assets/home/phoneInHand.png";
+import { Carousel } from "react-responsive-carousel";
+import { PropTypes } from "prop-types";
 
 const SingleHouse = () => {
+  const myImg = [
+    "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=1513&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
   return (
     <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-4 gap-10">
       <div className="col-span-4 md:col-span-3 ">
@@ -17,7 +29,8 @@ const SingleHouse = () => {
           </div>
           <p className="text-[24px] font-medium">290.000 $</p>
         </div>
-
+        {/* Carousel */}
+        <MyCarousel imgs={myImg} />
         {/* general info */}
         <div className="p-5 border mt-10">
           <p className="text-[20px] mb-5">General Information</p>
@@ -86,8 +99,14 @@ const SingleHouse = () => {
           <div className="flex flex-col justify-center text-center space-y-1">
             <p>Micheal James</p>
             <p className="text-my-secondary">Real Estate Specialist</p>
-            <button className="flex bg-[#31AA52] text-white py-3 rounded-lg items-center justify-center gap-4"> <img src={phone} alt="" /> <span>VIEW PHONE</span></button>
-            <button className="flex border text-[#434FAA] border-[#434FAA]  py-3 rounded-lg items-center justify-center gap-4"> <img src={message} alt="" /> <span>VIEW PHONE</span></button>
+            <button className="flex bg-[#31AA52] text-white py-3 rounded-lg items-center justify-center gap-4">
+              {" "}
+              <img src={phone} alt="" /> <span>VIEW PHONE</span>
+            </button>
+            <button className="flex border text-[#434FAA] border-[#434FAA]  py-3 rounded-lg items-center justify-center gap-4">
+              {" "}
+              <img src={message} alt="" /> <span>VIEW PHONE</span>
+            </button>
           </div>
         </div>
       </div>
@@ -112,5 +131,17 @@ const Feature = ({ text }) => {
       <img src={tick} alt="" />
       <p className="text-[#00000080]">{text}</p>
     </div>
+  );
+};
+
+const MyCarousel = ({ imgs }) => {
+  return (
+    <Carousel className="mt-4" showArrows={true} showIndicators={false} showStatus={false}>
+      {imgs.map((img, index) => (
+        <div key={index}>
+          <img className="w-full object-cover" src={img} />
+        </div>
+      ))}
+    </Carousel>
   );
 };
