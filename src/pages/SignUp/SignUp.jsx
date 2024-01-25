@@ -7,11 +7,12 @@ const SignUp = () => {
   const {register, handleSubmit, reset} = useForm()
   const navigate = useNavigate()
   const handleForm = (data) => {
-    axios.post('http://localhost:5000/user/signUp', data)
+    axios.post('https://houter-server.vercel.app/user/signUp', data)
       .then(res => {
         toast.success('Sign Up Successful!')
         navigate('/dashboard/allHouse')
         reset()
+        localStorage.setItem("user", JSON.stringify(data))
       })
       .catch(e => {
         toast.error(e.message)
