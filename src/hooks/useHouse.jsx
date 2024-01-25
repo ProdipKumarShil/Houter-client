@@ -5,7 +5,7 @@ export const useHouse = () => {
   return useQuery({
     queryKey: ['houses'],
     queryFn: async () => {
-      const {data} = await axios.get('http://localhost:5000/house/allHouse')
+      const {data} = await axios.get('https://houter-server.vercel.app/house/allHouse')
       return data
     }
   })

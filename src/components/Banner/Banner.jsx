@@ -24,7 +24,7 @@ const SearchInput = () => {
   const [input, setInput] = useState("")
 
   const fetchData = (value) => {
-    axios.get('http://localhost:5000/house/allHouse')
+    axios.get('https://houter-server.vercel.app/house/allHouse')
       .then(res => {
         const data = res.data
         const result = data.filter((house) => value && house && house.name && house.name.toLowerCase().includes(value))

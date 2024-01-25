@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'house/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/house/house/${params.id}`),
+        loader: ({params}) => fetch(`https://houter-server.vercel.app/house/house/${params.id}`),
         element: <SingleHouse />
       },
       {
