@@ -8,58 +8,49 @@ import img3 from "../../assets/home/cardPic.png";
 import img4 from "../../assets/home/phoneInHand.png";
 import { Carousel } from "react-responsive-carousel";
 import { PropTypes } from "prop-types";
+import { useLoaderData } from "react-router-dom";
+import moment from "moment";
 
 const SingleHouse = () => {
-  const myImg = [
-    "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=1513&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+  const {name, img, address, bathroom, bedroom, city, availableDate, description, number, roomSize, user, price} = useLoaderData()
   return (
     <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-4 gap-10">
       <div className="col-span-4 md:col-span-3 ">
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div className="">
-            <p className="text-[24px] ">Large Family House</p>
+            <p className="text-[24px] ">{name}</p>
             <div className="flex items-center gap-2 mt-2">
               <img src={location} alt="" />
-              <p className="text-sm">London, Oxford St.</p>
+              <p className="text-sm">{address}</p>
             </div>
           </div>
-          <p className="text-[24px] font-medium">290.000 $</p>
+          <p className="text-[24px] font-medium">{price} $</p>
         </div>
         {/* Carousel */}
-        <MyCarousel imgs={myImg} />
+        <MyCarousel imgs={img} />
         {/* general info */}
         <div className="p-5 border mt-10">
           <p className="text-[20px] mb-5">General Information</p>
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="space-y-[15px]">
-              <Items />
-              <Items />
-              <Items />
-              <Items />
-              <Items />
+              <Items text="City" info={city} />
+              <Items text="Price" info={price + '$'} />
+              <Items text="Bathroom" info={bathroom} />
+              <Items text="Available Date" info={moment(availableDate).format('DD MMM, YYYY')} />
+              
             </div>
             <div className="space-y-[15px] mt-[15px] md:mt-0">
-              <Items />
-              <Items />
-              <Items />
-              <Items />
-              <Items />
+              <Items text="Bedroom" info={bedroom} />
+              <Items text="Number" info={number} />
+              <Items text="Room Size" info={roomSize} />
+              <Items text="Renter" info={user.name} />
             </div>
           </div>
         </div>
         {/* Explanation */}
         <div className="border p-5 mt-10">
           <p className="text-[20px] mb-5">Explanation</p>
-          <p className="text-[#00000080]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ac
-            convallis tellus pellentesque non odio consectetur bibendum. Auctor
-            leo risus in tristique sit enim nec sed. Ridiculus vulputate
-            facilisi a velit cursus sapien egestas nec, accumsan.{" "}
-          </p>
+          <p className="text-[#00000080]">{description}</p>
         </div>
         {/* features */}
         <div className="p-5 border mt-10 grid grid-cols-1 md:grid-cols-2">
@@ -93,11 +84,11 @@ const SingleHouse = () => {
         <div className="p-5 border">
           <img
             className="w-[115px] h-[115px] rounded-full block mx-auto "
-            src="https://s3-alpha-sig.figma.com/img/f296/ee16/05d90dd04e8447b05e4b21d2c028e6af?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XEYqhRN08FGJuwGtC5cnrf7p0dJXMOFbHlIRpZ8JtudOzQegV0xc~rcr9vrKKypQoRWB~I3OyN9IUyhrlm-~gZcE5IEgyLnPD-LsE7DLqGdxqOUjFQSRxtzXQZrNdJscR8ty2InHCiZN66RXnAEMclnGBf6xGXKvXEC-Krv0DjhibwHDLOCM7BdyCN6DoX7q9e0kEb~meRcTTRDmT568EaOnYgtNZdYrogulI1OIQUjn-qiTJokpHBtUf6q7nJfTbNtuaMmqh8OxW3nCNThJ-OEkQ4CPDfhS9HAnnntyI-AsdjDV6DItKToDvozEjopbeFeECUFDQfE-HcyO4GpIRQ__"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
             alt=""
           />
           <div className="flex flex-col justify-center text-center space-y-1">
-            <p>Micheal James</p>
+            <p>{user.name}</p>
             <p className="text-my-secondary">Real Estate Specialist</p>
             <button className="flex bg-[#31AA52] text-white py-3 rounded-lg items-center justify-center gap-4">
               {" "}
@@ -116,11 +107,11 @@ const SingleHouse = () => {
 
 export default SingleHouse;
 
-const Items = () => {
+const Items = ({text, info}) => {
   return (
     <div className="flex items-center gap-4">
-      <p className=" text-[#00000080]">Advertise No:</p>
-      <p>0-1234</p>
+      <p className=" text-[#00000080]">{text}</p>
+      <p>{info}</p>
     </div>
   );
 };
