@@ -9,11 +9,12 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import DallHouse from "../components/Dashboard/DallHouse/DallHouse";
 import DaddHouse from "../components/Dashboard/DaddHouse/DaddHouse";
 import Dbooking from "../components/Dashboard/Dbooking/Dbooking";
+import NewHome from "../pages/NewHome/NewHome";
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <NewHome />,
     errorElement: <p>error</p>,
     children: [
       {
