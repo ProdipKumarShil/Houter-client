@@ -3,6 +3,10 @@ import gradient from "../../assets/gradient/navGradient.svg";
 import gradient2 from "../../assets/gradient/navGradient2.svg";
 import banner from "../../assets/houter2/bannerBG.png";
 import homeIcon from "../../assets/houter2/homeIcon.png";
+import p1 from '../../assets/houter2/partnership/traveloka_logo.png'
+import p2 from '../../assets/houter2/partnership/traveloka_logo2.png'
+import p3 from '../../assets/houter2/partnership/traveloka_logo3.png'
+import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
 
 const NewHome = () => {
   return (
@@ -16,7 +20,7 @@ const NewHome = () => {
           <img src={logo} alt="" />
           <p className="text-[16px] font-bold text-h-primary">Houter</p>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="md:flex items-center gap-6 hidden">
           <button className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
             About Us
           </button>
@@ -33,8 +37,8 @@ const NewHome = () => {
       </div>
 
       {/* banner */}
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 mb-8">
-        <div className="">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 mb-8 p-4">
+        <div className="flex items-center lg:h-[85vh]">
           <div className="">
             <p className="text-[40px] mb-[26px] capitalize font-semibold text-h-primary">
               find the place to <br /> live your dreams <br /> easily here
@@ -50,7 +54,7 @@ const NewHome = () => {
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                 Search
               </label>
-              <div className="relative w-[80%]">
+              <div className="relative lg:w-[80%]">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -89,12 +93,22 @@ const NewHome = () => {
                 </button>
               </div>
             </div>
+            {/* partnership */}
+            <div className="">
+              <p className="text-[#888B97] font-normal">Our Partnership </p>
+              <div className="flex gap-8 items-center flex-wrap">
+                <img src={p1} alt="" />
+                <img src={p2} alt="" />
+                <img src={p3} alt="" />
+                <img src={p4} alt="" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="hidden md:block absolute right-0 top-0 -z-50">
           <div className="relative ">
-            <img className="w-[50vw] h-screen rounded-bl-[80px]" src={banner} alt="" />
-            
+            <img className="w-[50vw] h-[100vh] rounded-bl-[80px]" src={banner} alt="" />
+
             <div className="absolute bottom-[48px] left-[48px]">
               {/* show pus */}
               <div className="flex items-center gap-4 p-6 rounded-[32px] bg-white">
