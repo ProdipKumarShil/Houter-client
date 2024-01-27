@@ -7,6 +7,7 @@ import p1 from '../../assets/houter2/partnership/traveloka_logo.png'
 import p2 from '../../assets/houter2/partnership/traveloka_logo2.png'
 import p3 from '../../assets/houter2/partnership/traveloka_logo3.png'
 import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
+import FeatureCard from "../../components/FeatureCard/FeatureCard";
 
 const NewHome = () => {
   return (
@@ -36,8 +37,8 @@ const NewHome = () => {
         </div>
       </div>
 
-      {/* banner */}
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 mb-8 p-4">
+      {/* banner start */}
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 mb-[120px] p-4 ">
         <div className="flex items-center lg:h-[85vh]">
           <div className="">
             <p className="text-[40px] mb-[26px] capitalize font-semibold text-h-primary">
@@ -124,6 +125,14 @@ const NewHome = () => {
           </div>
         </div>
       </div>
+      {/* banner end */}
+
+      {/* feature card start */}
+      <div className="">
+        <FeatureCard />
+      </div>
+      {/* feature card end */}
+      
     </div>
   );
 };
