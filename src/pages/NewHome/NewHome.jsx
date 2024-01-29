@@ -8,6 +8,7 @@ import p2 from '../../assets/houter2/partnership/traveloka_logo2.png'
 import p3 from '../../assets/houter2/partnership/traveloka_logo3.png'
 import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
 import FeatureCard from "../../components/FeatureCard/FeatureCard";
+import AboutUs from "../../components/AboutUs/AboutUs";
 
 const NewHome = () => {
   return (
@@ -129,9 +130,15 @@ const NewHome = () => {
 
       {/* feature card start */}
       <div className="">
-        <FeatureCard />
+        {/* <FeatureCard /> */}
       </div>
       {/* feature card end */}
+      
+      {/* about us card start */}
+      <div className="mb-96 overflow-x-hidden">
+        <AboutUs />
+      </div>
+      {/* about us card end */}
       
     </div>
   );
