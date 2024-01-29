@@ -135,7 +135,7 @@ const NewHome = () => {
       {/* feature card end */}
       
       {/* about us card start */}
-      <div className="mb-96 overflow-x-hidden">
+      <div className="mt-20 overflow-x-hidden">
         <AboutUs />
       </div>
       {/* about us card end */}

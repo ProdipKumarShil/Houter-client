@@ -20,10 +20,10 @@ const FeatureCard = () => {
           trigger: slider.current,
           pin: true,
           start: "center center",
-          scrub: 1,
+          scrub: true,
           snap: 1 / (panels.length - 1),
           end: () => "+=" + slider.current.offsetWidth,
-          markers: true,
+          markers: false,
         },
       });
     }, component);
@@ -32,11 +32,11 @@ const FeatureCard = () => {
   });
 
   return (
-    <>
-      <div className="max-w-screen-xl mx-auto p-4 mb-10">
+    <div className="">
+      <div className="max-w-screen-xl mx-auto p-4 mb-10 mt-24">
         <HeadingLeft />
       </div>
-      <div
+      <div 
         ref={component}
         className="scroll-container w-full overflow-x-hidden overflow-y-hidden ">
         <div
@@ -50,7 +50,7 @@ const FeatureCard = () => {
           <HCard />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
