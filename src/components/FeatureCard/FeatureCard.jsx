@@ -32,7 +32,7 @@ const FeatureCard = () => {
   });
 
   return (
-    <div className="">
+    <div className="mb-[120px]">
       <div className="max-w-screen-xl mx-auto p-4 mb-10 mt-24">
         <HeadingLeft />
       </div>

@@ -10,6 +10,7 @@ import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
 import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
+import BlogSection from "../../components/Blog/BlogSection";
 
 const NewHome = () => {
   return (
@@ -147,6 +148,12 @@ const NewHome = () => {
         {/* <AboutUs /> */}
       </div>
       {/* about us card end */}
+
+      {/* blog section start */}
+      <div className="mt-20 overflow-x-hidden">
+        <BlogSection />
+      </div>
+      {/* blog section end */}
       
     </div>
   );

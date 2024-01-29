@@ -85,9 +85,9 @@ const ReadySell = () => {
         {/* img container */}
         <div className="relative">
           <img className="w-[448px] h-[416px] object-cover ml-auto rounded" src={home1} alt="" />
-          <img className=" absolute right-56 -bottom-14 w-[296px] h-[168px] object-cover" src={home2} alt="" />
-          <img className=" absolute right-[115px] -bottom-14 w-[96px] h-[80px] object-cover" src={flower} alt="" />
-          <img className=" absolute right-[8px] -bottom-14 w-[96px] h-[80px] object-cover" src={bench} alt="" />
+          <img className=" absolute hidden md:block right-56 -bottom-14 w-[296px] h-[168px] object-cover" src={home2} alt="" />
+          <img className=" absolute hidden md:block right-[115px] -bottom-14 w-[96px] h-[80px] object-cover" src={flower} alt="" />
+          <img className=" absolute hidden md:block right-[8px] -bottom-14 w-[96px] h-[80px] object-cover" src={bench} alt="" />
         </div>
       </div>
     </div>
