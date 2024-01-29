@@ -3,46 +3,55 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useLayoutEffect } from "react";
 import HCard from "./HCard";
-gsap.registerPlugin(ScrollTrigger)
+import HeadingLeft from "../../shared/Heading/HeadingLeft";
+gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCard = () => {
-
-  const component = useRef()
-  const slider = useRef()
+  const component = useRef();
+  const slider = useRef();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      let panels = gsap.utils.toArray('.panel')
+      let panels = gsap.utils.toArray(".panel");
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
-        ease: 'none',
+        ease: "none",
         scrollTrigger: {
           trigger: slider.current,
           pin: true,
           start: "center center",
           scrub: 1,
           snap: 1 / (panels.length - 1),
-          end: () => '+=' + slider.current.offsetWidth,
+          end: () => "+=" + slider.current.offsetWidth,
           markers: true,
-        }
-      })
+        },
+      });
     }, component);
 
-    return () => ctx.revert()
-  })
+    return () => ctx.revert();
+  });
 
   return (
-    <div ref={component} className="scroll-container w-full overflow-x-hidden overflow-y-hidden ">
-      <div ref={slider} className="scroll-content inline-flex gap-10 lg:ml-10">
-        <HCard />
-        <HCard />
-        <HCard />
-        <HCard />
-        <HCard />
-        <HCard />
+    <>
+      <div className="max-w-screen-xl mx-auto p-4 mb-10">
+        <HeadingLeft />
       </div>
-    </div>
-  )
+      <div
+        ref={component}
+        className="scroll-container w-full overflow-x-hidden overflow-y-hidden ">
+        <div
+          ref={slider}
+          className="scroll-content inline-flex gap-10 lg:ml-10">
+          <HCard />
+          <HCard />
+          <HCard />
+          <HCard />
+          <HCard />
+          <HCard />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default FeatureCard;

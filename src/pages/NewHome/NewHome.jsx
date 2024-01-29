@@ -130,7 +130,7 @@ const NewHome = () => {
 
       {/* feature card start */}
       <div className="">
-        {/* <FeatureCard /> */}
+        <FeatureCard />
       </div>
       {/* feature card end */}
       
