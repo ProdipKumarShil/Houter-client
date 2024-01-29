@@ -9,6 +9,7 @@ import p3 from '../../assets/houter2/partnership/traveloka_logo3.png'
 import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
 import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import ReadySell from "../../components/ReadySell/ReadySell";
 
 const NewHome = () => {
   return (
@@ -130,13 +131,20 @@ const NewHome = () => {
 
       {/* feature card start */}
       <div className="">
-        <FeatureCard />
+        {/* <FeatureCard /> */}
       </div>
       {/* feature card end */}
+
+
+      {/* ready sell section start */}
+      <div className="">
+        <ReadySell />
+      </div>
+      {/* ready sell section end */}
       
       {/* about us card start */}
       <div className="mt-20 overflow-x-hidden">
-        <AboutUs />
+        {/* <AboutUs /> */}
       </div>
       {/* about us card end */}
       
