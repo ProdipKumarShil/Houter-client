@@ -11,6 +11,7 @@ import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
+import Subscription from "../../components/Subscription/Subscription";
 
 const NewHome = () => {
   return (
@@ -150,10 +151,19 @@ const NewHome = () => {
       {/* about us card end */}
 
       {/* blog section start */}
-      <div className="mt-20 overflow-x-hidden">
+      <div className="">
         <BlogSection />
       </div>
       {/* blog section end */}
+
+
+      {/* subscription section start */}
+      <div className="">
+        <Subscription />
+      </div>
+      {/* subscription section end */}
+
+
       
     </div>
   );
