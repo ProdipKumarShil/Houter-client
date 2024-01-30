@@ -12,6 +12,7 @@ import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
+import Footer from "../../components/Footer/Footer";
 
 const NewHome = () => {
   return (
@@ -162,7 +163,7 @@ const NewHome = () => {
         <Subscription />
       </div>
       {/* subscription section end */}
-
+      <Footer />
 
       
     </div>
