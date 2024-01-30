@@ -2,7 +2,7 @@ import sub from "../../assets/home/subscribe.png";
 
 const Subscription = () => {
   return (
-    <div className="max-w-screen-xl mx-auto p-4 relative mb-[120px]">
+    <div className="max-w-screen-xl mx-auto p-4 relative">
       <img
         className="w-full h-[312px] object-cover rounded-[32px]"
         src={sub}

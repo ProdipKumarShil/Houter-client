@@ -12,7 +12,6 @@ import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
-import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const NewHome = () => {

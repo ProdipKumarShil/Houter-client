@@ -11,7 +11,7 @@ const AllHouse = () => {
   }
   return (
     <div className='max-w-screen-xl mx-auto p-4'>
-      <p className='text-[24px] font-medium mt-7 mb-5'>Apartment for rental</p>
+      <p className='text-[24px] font-medium mt-7 mb-5 text-h-primary'>Apartment for rental</p>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {
           houses.map(house => <FeatureCard house={house} key={house._id} />)

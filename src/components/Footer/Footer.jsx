@@ -7,7 +7,7 @@ import gradient2 from '../../assets/gradient/footerGradient2.svg'
 
 const Footer = () => {
   return (
-    <div className="relative pb-[120px]">
+    <div className="relative py-[120px]">
       <img className='absolute right-0 bottom-0 -z-50' src={gradient} alt="" />
       <img className='absolute right-16 bottom-0 -z-50' src={gradient2} alt="" />
       <footer className="max-w-screen-xl mx-auto p-2 grid grid-cols-1 md:grid-cols-7">

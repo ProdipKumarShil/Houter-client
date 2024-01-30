@@ -18,7 +18,6 @@ const BlogSection = () => {
       scrollTrigger: {
         trigger: '.blog',
         start: 'top 300px',
-        markers: true
       },
       x: 100,
       opacity: 0,

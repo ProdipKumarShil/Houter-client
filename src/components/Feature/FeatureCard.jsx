@@ -6,7 +6,6 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 const FeatureCard = ({house}) => {
-  console.log(house)
   const {_id, name, price, address, bathroom, bedroom, roomSize, availableDate, img} = house
   
   return (

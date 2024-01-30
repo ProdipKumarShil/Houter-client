@@ -6,7 +6,7 @@ const Navbar = () => {
   const user = getUser();
   const handleLogOut = () => localStorage.clear();
   return (
-    <div className="bg-gradient-to-r bg-opacity-5 from-h-secondary to-h-primary ">
+    <div className="bg-gradient-to-r bg-opacity-5 from-h-secondary to-h-primary mb-[30px]">
       <div className="max-w-screen-xl py-4 mx-auto p-2 flex items-center justify-between">
         <Link to="/" className="flex gap-3 items-center">
           <img src={logo} alt="" />
