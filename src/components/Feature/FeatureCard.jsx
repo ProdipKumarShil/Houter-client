@@ -9,7 +9,7 @@ const FeatureCard = ({house}) => {
   const {_id, name, price, address, bathroom, bedroom, roomSize, availableDate, img} = house
   
   return (
-    <Link to={`/house/${_id}`} className="border p-[10px]">
+    <Link to={`/house/${_id}`} className="border p-[10px] featureCard">
       <img className="w-full h-[165px] object-cover " src={img[0]} alt="" />
       <div className="space-y-[10px] mt-[10px]">
         <p className="text-2xl font-medium">{price} $</p>
