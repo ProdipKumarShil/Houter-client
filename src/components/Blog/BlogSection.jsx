@@ -4,8 +4,28 @@ import clock from "../../assets/icons/clock.svg";
 import BlogCard from "./BlogCard";
 import gradient1 from '../../assets/gradient/blogGradient.svg'
 import gradient2 from '../../assets/gradient/blogGradient2.svg'
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const BlogSection = () => {
+  const blogRef = useRef(null)
+  useGSAP(() => {
+    gsap.from('.blog',{
+      scrollTrigger: {
+        trigger: '.blog',
+        start: 'top 300px',
+        markers: true
+      },
+      x: 100,
+      opacity: 0,
+      ease: 'circ',
+      stagger: 0.3
+    })
+  }, {scope: blogRef})
   return (
     <div className="relative mb-[120px]">
       <img className="absolute -top-20 -z-50 left-0" src={gradient1} alt="" />
@@ -16,7 +36,7 @@ const BlogSection = () => {
           More Artikel
         </button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-2">
-          <div className="space-y-11">
+          <div ref={blogRef} className="space-y-11">
             <Blog />
             <Blog />
             <Blog />
@@ -34,7 +54,7 @@ export default BlogSection;
 
 const Blog = () => {
   return (
-    <div className="md:flex gap-8">
+    <div className="md:flex gap-8 blog">
       <img
         className="w-full md:w-[220px] mb-4 md:mb-0 h-[144px] object-cover rounded-2xl"
         src={blogImg}

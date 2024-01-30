@@ -133,7 +133,7 @@ const NewHome = () => {
 
       {/* feature card start */}
       <div className="">
-        {/* <FeatureCard /> */}
+        <FeatureCard />
       </div>
       {/* feature card end */}
 
@@ -145,8 +145,8 @@ const NewHome = () => {
       {/* ready sell section end */}
       
       {/* about us card start */}
-      <div className="mt-20 overflow-x-hidden">
-        {/* <AboutUs /> */}
+      <div className="mt-20 overflow-x-hidden overflow-hidden mb-[120]">
+        <AboutUs />
       </div>
       {/* about us card end */}
 
