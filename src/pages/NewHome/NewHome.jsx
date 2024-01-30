@@ -13,6 +13,7 @@ import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
 import { Link } from "react-router-dom";
+import { useHouse } from "../../hooks/useHouse";
 
 const NewHome = () => {
   return (
