@@ -30,7 +30,7 @@ const BlogSection = () => {
       <img className="absolute -top-20 -z-50 left-0" src={gradient1} alt="" />
       <img className="absolute top-10 -z-50 left-0" src={gradient2} alt="" />
       <div className="max-w-screen-xl mx-auto p-4">
-        <HeadingCenter header="See tips and trick from our partnership" title="Find out more about selling and buying homes" />
+        <HeadingCenter triggerName="blog" header="See tips and trick from our partnership" title="Find out more about selling and buying homes" />
         <button className="active:scale-95 bg-h-secondary py-3 px-4 rounded-[32px] text-white font-semibold mx-auto block mt-[24px] mb-[42px]">
           More Artikel
         </button>

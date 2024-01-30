@@ -24,7 +24,8 @@
     "react-hot-toast": "^2.4.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.21.3",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
