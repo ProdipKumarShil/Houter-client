@@ -13,7 +13,7 @@ import bench from '../../assets/home/bench.png'
 
 const ReadySell = () => {
   return (
-    <div className="relative ">
+    <div className="relative mb-[120px]">
       <img
         className="absolute right-0  -top-36 -z-40"
         src={gradient1}
@@ -27,7 +27,7 @@ const ReadySell = () => {
       <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-1 md:grid-cols-2">
         {/* text container */}
         <div className="">
-          <HeadingLeft />
+          <HeadingLeft header="Ready to Sell!" title="Let’s tour and see our house!" />
           <p className="text-[#626687] mt-4">
             Houses recommended by our partners that have been curated to become
             the home of your dreams!

@@ -44,7 +44,7 @@ const AboutUs = () => {
   }, []);
   return (
     <>
-    <HeadingCenter />
+    <HeadingCenter header="See Our Review" title="What Our User Say About Us" />
       <div className="pinned-image" ref={containerRef}>
         <div className="pinned-image__container scale-50    h-screen flex justify-center relative">
           <img

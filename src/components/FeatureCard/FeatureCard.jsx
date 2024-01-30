@@ -34,7 +34,7 @@ const FeatureCard = () => {
   return (
     <div className="mb-[120px]">
       <div className="max-w-screen-xl mx-auto p-4 mb-10 mt-24">
-        <HeadingLeft />
+        <HeadingLeft header="Our Recommendation" title="Featured House" />
       </div>
       <div 
         ref={component}

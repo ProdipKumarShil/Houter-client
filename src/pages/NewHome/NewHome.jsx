@@ -3,16 +3,17 @@ import gradient from "../../assets/gradient/navGradient.svg";
 import gradient2 from "../../assets/gradient/navGradient2.svg";
 import banner from "../../assets/houter2/bannerBG.png";
 import homeIcon from "../../assets/houter2/homeIcon.png";
-import p1 from '../../assets/houter2/partnership/traveloka_logo.png'
-import p2 from '../../assets/houter2/partnership/traveloka_logo2.png'
-import p3 from '../../assets/houter2/partnership/traveloka_logo3.png'
-import p4 from '../../assets/houter2/partnership/traveloka_logo4.png'
+import p1 from "../../assets/houter2/partnership/traveloka_logo.png";
+import p2 from "../../assets/houter2/partnership/traveloka_logo2.png";
+import p3 from "../../assets/houter2/partnership/traveloka_logo3.png";
+import p4 from "../../assets/houter2/partnership/traveloka_logo4.png";
 import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 const NewHome = () => {
   return (
@@ -27,18 +28,26 @@ const NewHome = () => {
           <p className="text-[16px] font-bold text-h-primary">Houter</p>
         </div>
         <div className="md:flex items-center gap-6 hidden">
-          <button className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
+          <Link
+            to="/allHouse"
+            className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
+            For Rent
+          </Link>
+          <Link
+            to="/blogs"
+            className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
+            Blogs
+          </Link>
+          <Link
+            to="/aboutUs"
+            className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
             About Us
-          </button>
-          <button className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
-            Article
-          </button>
-          <button className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
-            Property
-          </button>
-          <button className="ml-8 text-[14px] font-semibold px-6 py-3 border border-[#ffffff4d] rounded-badge bg-[#D1FAE5] text-h-secondary">
+          </Link>
+          <Link
+            to="/signUp"
+            className="ml-8 text-[14px] font-semibold px-6 py-3 border border-[#ffffff4d] rounded-badge bg-[#D1FAE5] text-h-secondary">
             Sign Up!
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -113,7 +122,11 @@ const NewHome = () => {
         </div>
         <div className="hidden md:block absolute right-0 top-0 -z-50">
           <div className="relative ">
-            <img className="w-[50vw] h-[100vh] rounded-bl-[80px]" src={banner} alt="" />
+            <img
+              className="w-[50vw] h-[100vh] rounded-bl-[80px]"
+              src={banner}
+              alt=""
+            />
 
             <div className="absolute bottom-[48px] left-[48px]">
               {/* show pus */}
@@ -138,15 +151,14 @@ const NewHome = () => {
       </div>
       {/* feature card end */}
 
-
       {/* ready sell section start */}
       <div className="">
         <ReadySell />
       </div>
       {/* ready sell section end */}
-      
+
       {/* about us card start */}
-      <div className="mt-20 overflow-x-hidden overflow-hidden mb-[120]">
+      <div className="mt-20 overflow-x-hidden overflow-hidden mb-[120px]">
         <AboutUs />
       </div>
       {/* about us card end */}
@@ -157,15 +169,11 @@ const NewHome = () => {
       </div>
       {/* blog section end */}
 
-
       {/* subscription section start */}
       <div className="">
         <Subscription />
       </div>
       {/* subscription section end */}
-      <Footer />
-
-      
     </div>
   );
 };
