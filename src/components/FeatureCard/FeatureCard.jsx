@@ -1,11 +1,9 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
+import { useRef} from "react";
 import { useLayoutEffect } from "react";
 import HCard from "./HCard";
 import HeadingLeft from "../../shared/Heading/HeadingLeft";
-import { useHouse } from "../../hooks/useHouse";
-import axios from "axios";
 gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCard = () => {
@@ -74,7 +72,7 @@ const FeatureCard = () => {
   return (
     <div className="mb-[120px]">
       <div className="max-w-screen-xl mx-auto p-4 mb-10 mt-24">
-        <HeadingLeft header="Our Recommendation" title="Featured House" />
+        <HeadingLeft triggerName="featureCard" header="Our Recommendation" title="Featured House" />
       </div>
       <div 
         ref={component}
@@ -90,23 +88,3 @@ const FeatureCard = () => {
 };
 
 export default FeatureCard;
-
-const Card = () => {
-  return (
-    <div className="panel card w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
-      </div>
-    </div>
-  );
-};

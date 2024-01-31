@@ -27,7 +27,7 @@ const ReadySell = () => {
       <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-1 md:grid-cols-2">
         {/* text container */}
         <div className="">
-          <HeadingLeft header="Ready to Sell!" title="Let’s tour and see our house!" />
+          <HeadingLeft triggerName="sell" header="Ready to Sell!" title="Let’s tour and see our house!" />
           <p className="text-[#626687] mt-4">
             Houses recommended by our partners that have been curated to become
             the home of your dreams!

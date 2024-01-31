@@ -13,8 +13,6 @@ import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
 import { Link } from "react-router-dom";
-import { useHouse } from "../../hooks/useHouse";
-import HeadingCenter from "../../shared/Heading/HeadingCenter";
 
 const NewHome = () => {
   return (
@@ -144,7 +142,6 @@ const NewHome = () => {
           </div>
         </div>
       </div>
-      <HeadingCenter triggerName="home" header="See Our Review" title="What Our User Say About Us" />
       {/* banner end */}
 
       {/* feature card start */}

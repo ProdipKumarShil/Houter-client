@@ -21,7 +21,8 @@ const HeadingCenter = ({ header, title, triggerName }) => {
       opacity: 0,
       stagger: 0.2,
       ease: "back",
-      duration: 1
+      duration: 1,
+      rotate: 15
     })
 
     gsap.from(splitText.chars, {
