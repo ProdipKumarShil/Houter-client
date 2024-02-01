@@ -2,49 +2,109 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { getUser } from "../../../hooks/getUser";
+import { useState } from "react";
+
+// const DaddHouse = () => {
+//   const [images, setImages] = useState([])
+
+//   const handleImageChange = (e) => {
+//     const files = e.target.files;
+//     setImages([...images, ...files])
+//   }
+
+//   const handleUpload = async() => {
+//     const formData = new FormData()
+//     images.forEach(image => {
+//       formData.append('images', image)
+//     })
+
+//     try{
+//       const response = await axios.post('http://localhost:5000/house/addHouse', formData)
+//       console.log(response.data)
+//     } catch (error) {
+//       console.error("Error uploading images: ", error)
+//     }
+//   }
+
+//   return(
+//     <div className="">
+//       <input type="file" multiple onChange={handleImageChange} />
+//       <button onClick={handleUpload}>Upload Images</button>
+//     </div>
+//   )
+// }
 
 const DaddHouse = () => {
   const { register, handleSubmit, reset } = useForm();
   const user = getUser();
-  console.log(user);
 
-  const handleHouse = (value) => {
+  const handleHouse = async (value) => {
     const formData = new FormData();
-    formData.append("image", value.img[0]);
-    console.log(formData);
+    for (let i = 0; i < value.images.length; i++) {
+      formData.append("images", value.images[i]);
+    }
+    const houseData = {
+      name: value.name,
+      price: value.price,
+      address: value.address,
+      bathroom: value.bathroom,
+      bedroom: value.bedroom,
+      city: value.city,
+      availableDate: value.availableDate,
+      description: value.description,
+      number: value.number,
+      roomSize: value.roomSize,
+      user: user,
+    };
+    formData.append("houseData", JSON.stringify(houseData));
     axios
-      .post(
-        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_KEY}`,
-        formData
-      )
+      .post("https://houter-server.vercel.app/house/addHouse", formData)
       .then((res) => {
-        const house = {
-          name: value.name,
-          price: value.price,
-          address: value.address,
-          bathroom: value.bathroom,
-          bedroom: value.bedroom,
-          city: value.city,
-          availableDate: value.availableDate,
-          description: value.description,
-          img: [res.data.data.url],
-          number: value.number,
-          roomSize: value.roomSize,
-          user: user,
-        };
-        console.log(house)
-        axios
-          .post("https://houter-server.vercel.app/house/addHouse", house)
-          .then((res) => {
-            toast.success("House added successfully");
-            reset()
-          })
-          .catch((e) => {
-            console.log(e);
-            toast.error("Something went wrong!!");
-          });
+        toast.success("House added successfully");
+        reset();
+      })
+      .catch((e) => {
+        toast.error("Something went wrong!!");
       });
   };
+
+  // const handleHouse = (value) => {
+  //   const formData = new FormData();
+  //   formData.append("image", value.img[0]);
+  //   console.log(formData);
+  //   axios
+  //     .post(
+  //       `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_KEY}`,
+  //       formData
+  //     )
+  //     .then((res) => {
+  //       const house = {
+  //         name: value.name,
+  //         price: value.price,
+  //         address: value.address,
+  //         bathroom: value.bathroom,
+  //         bedroom: value.bedroom,
+  //         city: value.city,
+  //         availableDate: value.availableDate,
+  //         description: value.description,
+  //         img: [res.data.data.url],
+  //         number: value.number,
+  //         roomSize: value.roomSize,
+  //         user: user,
+  //       };
+  //       console.log(house)
+  //       axios
+  //         .post("https://houter-server.vercel.app/house/addHouse", house)
+  //         .then((res) => {
+  //           toast.success("House added successfully");
+  //           reset()
+  //         })
+  //         .catch((e) => {
+  //           console.log(e);
+  //           toast.error("Something went wrong!!");
+  //         });
+  //     });
+  // };
 
   return (
     <form onSubmit={handleSubmit(handleHouse)} className="w-full p-4 space-y-3">
@@ -99,8 +159,9 @@ const DaddHouse = () => {
       /> */}
       <input
         type="file"
-        {...register("img", { required: true })}
+        {...register("images", { required: true })}
         className="file-input w-full border border-my-secondary"
+        multiple
       />
       {/* <input
         className="border border-my-secondary p-3 rounded-lg w-full"
@@ -126,7 +187,7 @@ const DaddHouse = () => {
         type="text"
         {...register("description", { required: true })}
       />
-      <button className=" bg-my-primary text-white py-3 rounded-lg w-full font-bold">
+      <button className=" active:scale-95 bg-my-primary text-white py-3 rounded-lg w-full font-bold">
         Submit
       </button>
     </form>
