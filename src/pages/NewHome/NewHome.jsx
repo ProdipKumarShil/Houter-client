@@ -13,8 +13,20 @@ import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
 import { Link } from "react-router-dom";
+import { getUser } from "../../hooks/getUser";
+import { useEffect, useState } from "react";
 
 const NewHome = () => {
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    setUser(getUser)
+  }, [])
+  
+  const handleSignOut = () => {
+    localStorage.clear()
+    setUser(null)
+  }
+  // const user = getUser()
   return (
     <div className="relative">
       <img className="absolute inset-0 -z-50" src={gradient} alt="" />
@@ -42,11 +54,41 @@ const NewHome = () => {
             className="text-white text-[14px] font-semibold px-4 py-2 border border-[#ffffff4d] rounded-badge bg-[#ffffff1a]">
             About Us
           </Link>
-          <Link
-            to="/signUp"
-            className="ml-8 text-[14px] font-semibold px-6 py-3 border border-[#ffffff4d] rounded-badge bg-[#D1FAE5] text-h-secondary">
-            Sign Up!
-          </Link>
+          {user ? (
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <img
+                src={user?.img}
+                tabIndex={0}
+                className="border-2 active:scale-95 border-[#ffffff4d] w-12 h-12 object-cover rounded-full"
+              />
+
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/allHouse">For Rent</Link>
+                </li>
+                <li>
+                  <Link to="/blogs">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/aboutUs">About Us</Link>
+                </li>
+                <li onClick={handleSignOut}>
+                  <Link>Sign out</Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link
+              to="/signUp"
+              className="ml-8 text-[14px] font-semibold px-6 py-3 border border-[#ffffff4d] rounded-badge bg-[#D1FAE5] text-h-secondary">
+              Sign Up!
+            </Link>
+          )}
         </div>
       </div>
 
