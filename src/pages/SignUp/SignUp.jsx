@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -67,7 +67,7 @@ const SignUp = () => {
         <input
           type="file"
           {...register("img")}
-          className="border border-my-secondary file-input file-input-bordered w-full "
+          className="border border-my-secondary file-input file-input-success file-input-bordered w-full "
         />
         <select
           {...register("role")}
@@ -83,7 +83,8 @@ const SignUp = () => {
           type="password"
           {...register("password")}
         />
-        <button className=" bg-my-primary text-white py-3 rounded-lg w-full font-bold">
+        <p className="text-xs">Already have an account <Link className="text-h-secondary underline" to='/signIn'>Sign In</Link></p>
+        <button className=" bg-h-secondary text-white py-3 rounded-lg w-full font-bold">
           Sign In
         </button>
       </form>

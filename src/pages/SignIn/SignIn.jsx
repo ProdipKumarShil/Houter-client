@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const {handleSubmit, register, reset} = useForm()
@@ -38,7 +38,8 @@ const SignIn = () => {
           type="password"
           {...register('password')}
         />
-        <button className=" bg-my-primary text-white py-3 rounded-lg w-full font-bold">
+        <p className="text-xs">Don't have an account <Link className="text-h-secondary underline" to='/signUp'>Sign Up</Link></p>
+        <button className=" bg-h-secondary active:scale-95 text-white py-3 rounded-lg w-full font-bold">
           Sign In
         </button>
       </form>
