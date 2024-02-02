@@ -2,17 +2,12 @@ import location from "../../assets/icons/location.svg";
 import tick from "../../assets/icons/tick.svg";
 import phone from "../../assets/icons/phone.svg";
 import message from "../../assets/icons/message.svg";
-import img from "../../assets/home/bg.jpg";
-import img2 from "../../assets/home/building.jpg";
-import img3 from "../../assets/home/cardPic.png";
-import img4 from "../../assets/home/phoneInHand.png";
 import { Carousel } from "react-responsive-carousel";
-import { PropTypes } from "prop-types";
 import { useLoaderData } from "react-router-dom";
 import moment from "moment";
 
 const SingleHouse = () => {
-  const {name, img, address, bathroom, bedroom, city, availableDate, description, number, roomSize, user, price} = useLoaderData()
+  const {name, images, address, bathroom, bedroom, city, availableDate, description, number, roomSize, user, price} = useLoaderData()
   return (
     <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-4 gap-10">
       <div className="col-span-4 md:col-span-3 ">
@@ -27,7 +22,7 @@ const SingleHouse = () => {
           <p className="text-[24px] font-medium">{price} $</p>
         </div>
         {/* Carousel */}
-        <MyCarousel imgs={img} />
+        <MyCarousel imgs={images} />
         {/* general info */}
         <div className="p-5 border mt-10">
           <p className="text-[20px] mb-5">General Information</p>
@@ -84,7 +79,7 @@ const SingleHouse = () => {
         <div className="p-5 border">
           <img
             className="w-[115px] h-[115px] rounded-full block mx-auto "
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            src={user.img}
             alt=""
           />
           <div className="flex flex-col justify-center text-center space-y-1">
