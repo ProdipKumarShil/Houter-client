@@ -2,37 +2,6 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { getUser } from "../../../hooks/getUser";
-import { useState } from "react";
-
-// const DaddHouse = () => {
-//   const [images, setImages] = useState([])
-
-//   const handleImageChange = (e) => {
-//     const files = e.target.files;
-//     setImages([...images, ...files])
-//   }
-
-//   const handleUpload = async() => {
-//     const formData = new FormData()
-//     images.forEach(image => {
-//       formData.append('images', image)
-//     })
-
-//     try{
-//       const response = await axios.post('http://localhost:5000/house/addHouse', formData)
-//       console.log(response.data)
-//     } catch (error) {
-//       console.error("Error uploading images: ", error)
-//     }
-//   }
-
-//   return(
-//     <div className="">
-//       <input type="file" multiple onChange={handleImageChange} />
-//       <button onClick={handleUpload}>Upload Images</button>
-//     </div>
-//   )
-// }
 
 const DaddHouse = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -151,24 +120,12 @@ const DaddHouse = () => {
         type="number"
         {...register("roomSize", { required: true })}
       />
-      {/* <input
-        className="border border-my-secondary p-3 rounded-lg w-full"
-        placeholder="House Picture"
-        type="text"
-        {...register('img', { required: true})}
-      /> */}
       <input
         type="file"
         {...register("images", { required: true })}
         className="file-input file-input-success w-full border border-my-secondary"
         multiple
       />
-      {/* <input
-        className="border border-my-secondary p-3 rounded-lg w-full"
-        placeholder="House Availability Data"
-        type="text"
-        {...register('availableDate', { required: true})}
-      /> */}
       <input
         className="border border-my-secondary p-3 rounded-lg w-full"
         placeholder="Rent Per Month"

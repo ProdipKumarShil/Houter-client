@@ -85,14 +85,15 @@ const SingleHouse = () => {
           <div className="flex flex-col justify-center text-center space-y-1">
             <p>{user.name}</p>
             <p className="text-my-secondary">Real Estate Specialist</p>
-            <button className="flex bg-[#31AA52] text-white py-3 rounded-lg items-center justify-center gap-4">
-              {" "}
-              <img src={phone} alt="" /> <span>VIEW PHONE</span>
-            </button>
-            <button className="flex border text-[#434FAA] border-[#434FAA]  py-3 rounded-lg items-center justify-center gap-4">
-              {" "}
-              <img src={message} alt="" /> <span>VIEW PHONE</span>
-            </button>
+            <div className="mt-5 ">
+              <button className="flex w-full bg-h-secondary text-white py-3 mt-5 rounded-lg items-center justify-center gap-4">
+                {" "}
+                <img src={phone} alt="" /> <span>Call</span>
+              </button>
+              <button className="mt-3 w-full border text-h-primary border-h-primary  py-3 rounded-lg">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
