@@ -10,8 +10,8 @@ import Dbooking from "../components/Dashboard/Dbooking/Dbooking";
 import NewHome from "../pages/NewHome/NewHome";
 import MainLayout from "../pages/MainLayout/MainLayout";
 import Dprofile from "../components/Dashboard/Dprofile/Dprofile";
-import AboutUs from "../pages/AboutUs/AboutUs";
 import Blogs from "../pages/Blogs/Blogs";
+import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'aboutUs',
-        element: <AboutUs />
+        element: <AboutUsPage />
       }
     ]
   },
