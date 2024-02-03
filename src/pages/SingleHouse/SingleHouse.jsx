@@ -1,7 +1,6 @@
 import location from "../../assets/icons/location.svg";
 import tick from "../../assets/icons/tick.svg";
 import phone from "../../assets/icons/phone.svg";
-import message from "../../assets/icons/message.svg";
 import { Carousel } from "react-responsive-carousel";
 import { useLoaderData } from "react-router-dom";
 import moment from "moment";
