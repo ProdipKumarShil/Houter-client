@@ -160,7 +160,7 @@ const DaddHouse = () => {
       <input
         type="file"
         {...register("images", { required: true })}
-        className="file-input w-full border border-my-secondary"
+        className="file-input file-input-success w-full border border-my-secondary"
         multiple
       />
       {/* <input
@@ -187,7 +187,7 @@ const DaddHouse = () => {
         type="text"
         {...register("description", { required: true })}
       />
-      <button className=" active:scale-95 bg-my-primary text-white py-3 rounded-lg w-full font-bold">
+      <button className=" active:scale-95 bg-h-secondary text-white py-3 rounded-lg w-full font-bold">
         Submit
       </button>
     </form>
