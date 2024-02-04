@@ -12,19 +12,16 @@ import AboutUs from "../../components/AboutUs/AboutUs";
 import ReadySell from "../../components/ReadySell/ReadySell";
 import BlogSection from "../../components/Blog/BlogSection";
 import Subscription from "../../components/Subscription/Subscription";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../hooks/getUser";
-import { useEffect, useState } from "react";
 
 const NewHome = () => {
-  const [user, setUser] = useState(null)
-  useEffect(() => {
-    setUser(getUser)
-  }, [])
+  const navigate = useNavigate()
+  const user = getUser()
   
   const handleSignOut = () => {
     localStorage.clear()
-    setUser(null)
+    navigate('/')
   }
   // const user = getUser()
   return (
