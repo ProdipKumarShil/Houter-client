@@ -9,40 +9,40 @@ gsap.registerPlugin(ScrollTrigger);
 const FeatureCard = () => {
   const myArr = [
     {
-      _id: "65b1d890a32901c11e376462",
-      name: "Brightside at Jefferson",
-      price: 2890,
-      address: "503 Danielsville St, Jefferson, GA 30549",
-      userName: "Katrina",
-      img: "https://i.ibb.co/02NC1JB/h1.jpg",
-      userImg: ""
+      _id: "65bbf6a8377fec6795ab5542",
+      name: "832 33rd Ave E",
+      price: 1700000,
+      address: "Seattle, WA 98112",
+      userName: "Wanda Garcia",
+      img: "https://res.cloudinary.com/dwhhe5dgs/image/upload/v1706817192/houter/xjmmayqlq7w4wfyplz5y.jpg",
+      userImg: "https://i.ibb.co/x3nJwkM/68.jpg"
     },
     {
-      _id: "65b1daa759ddb2c51edfc48e",
-      name: "Benton Grove",
-      price: 1002,
-      address: "2 Venice Pl, Pooler, GA 31322",
-      userName: "Katrina",
-      img: "https://i.ibb.co/DMFKKNv/h2.jpg",
-      userImg: ""
+      _id: "65bca269fc0fa11a45714597",
+      name: "Harbor Dr",
+      price: 275000,
+      address: "Chicago, IL 60601",
+      userName: "Wanda Garcia",
+      img: "https://res.cloudinary.com/dwhhe5dgs/image/upload/v1706861161/houter/yydwn5jkbjisfcoozvom.jpg",
+      userImg: "https://i.ibb.co/x3nJwkM/68.jpg"
     },
     {
-      _id: "65b1db0559ddb2c51edfc491",
-      name: "Redwood Holt",
-      price: 2990,
-      address: "1657 Leaview Rd, Holt, MI 48842",
-      userName: "Katrina",
-      img: "https://i.ibb.co/FsMFF3Q/h3.jpg",
-      userImg: ""
+      _id: "65bca2cbfc0fa11a45714599",
+      name: "Greenwood Neighborhood",
+      price: 1124000 ,
+      address: "Seattle, WA 98103",
+      userName: "Wanda Garcia",
+      img: "https://res.cloudinary.com/dwhhe5dgs/image/upload/v1706861258/houter/y6hounaqiwff8j4eq80h.jpg",
+      userImg: "https://i.ibb.co/x3nJwkM/68.jpg"
     },
     {
-      _id: "65b1de8982969002507e963f",
-      name: "WEST CIRCLE RENTAL",
-      price: 3475,
-      address: "United States of America",
-      userName: "Katrina",
-      img: "https://i.ibb.co/Kwn4zyG/h4.jpg",
-      userImg: ""
+      _id: "65bca361fc0fa11a4571459b",
+      name: "Laurel Rd",
+      price: 250000 ,
+      address: "London, KY 40741",
+      userName: "Wanda Garcia",
+      img: "https://res.cloudinary.com/dwhhe5dgs/image/upload/v1706861409/houter/zq0v8w1zrwuzh2lqemtz.jpg",
+      userImg: "https://i.ibb.co/x3nJwkM/68.jpg"
     },
   ]
   const component = useRef();
