@@ -7,7 +7,6 @@ import { getUser } from "../../../hooks/getUser";
 const TableBody = ({ modalId, house, refetch }) => {
   const { register, handleSubmit } = useForm();
   const { _id, name, images, address, price, city, availableDate, bathroom, bedroom, roomSize, number, description } = house;
-  console.log(house)
   const user = getUser()
   const handleDeleteHouse = () => {
     axios

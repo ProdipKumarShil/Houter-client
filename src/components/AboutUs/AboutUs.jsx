@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import img from "../../assets/home/building.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import star from "../../assets/icons/star.svg";
@@ -48,7 +47,7 @@ const AboutUs = () => {
       <div className="pinned-image" ref={containerRef}>
         <div className="pinned-image__container scale-50    h-screen flex justify-center relative">
           <img
-            src={img}
+            src="https://res.cloudinary.com/dwhhe5dgs/image/upload/v1707118652/houter/assets/building_iagjzy.jpg"
             className="h-full w-full rounded-2xl object-cover absolute top-0 left-0"
           />
           <div

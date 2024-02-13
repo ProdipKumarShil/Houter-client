@@ -13,7 +13,7 @@ const SignIn = () => {
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("user", JSON.stringify(res.data.user))
         toast.success("Logged in successfully!")
-        navigate('/dashboard/allHouse')
+        navigate('/dashboard/profile')
         reset()
       })
       .catch(e => {

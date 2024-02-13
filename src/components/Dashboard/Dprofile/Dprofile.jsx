@@ -1,9 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../../hooks/getUser";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Dprofile = () => {
   const user = getUser();
-  console.log(user);
+  const navigate = useNavigate()
+  const handleSignOut = () => {
+    localStorage.clear()
+    navigate('/')
+  }
+  const deleteAccount = () => {
+    axios.delete(`http://localhost:5000/user/deleteUser/${user._id}`)
+      .then( res => {
+        console.log(res)
+        if(res.status){
+          toast.success('User deleted')
+          localStorage.clear()
+          navigate('/')
+        } else {
+          toast.error('Failed to delete user')
+        }
+      })
+  }
   return (
     <div className="w-full p-4">
       <form className="max-w-96 mx-auto space-y-5" action="">
@@ -29,8 +48,8 @@ const Dprofile = () => {
         </Link>
       </form>
       <div className="flex justify-between items-center px-2 max-w-96 mx-auto my-5">
-        <button className="btn btn-xs text-red-600 ">Delete Account</button>
-        <button className="btn btn-xs text-red-600 ">Sign Out</button>
+        <button onClick={deleteAccount} className="btn btn-xs text-red-600 ">Delete Account</button>
+        <button onClick={handleSignOut} className="btn btn-xs text-red-600 ">Sign Out</button>
       </div>
     </div>
   );

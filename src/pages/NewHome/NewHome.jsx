@@ -1,7 +1,6 @@
 import logo from "../../assets/logo/houterLogo.svg";
 import gradient from "../../assets/gradient/navGradient.svg";
 import gradient2 from "../../assets/gradient/navGradient2.svg";
-import banner from "../../assets/home/bannerBG.png";
 import homeIcon from "../../assets/home/homeIcon.png";
 import p1 from "../../assets/partnership/traveloka_logo.png";
 import p2 from "../../assets/partnership/traveloka_logo2.png";
@@ -162,7 +161,7 @@ const NewHome = () => {
           <div className="relative ">
             <img
               className="w-[50vw] h-[100vh] rounded-bl-[80px]"
-              src={banner}
+              src="https://res.cloudinary.com/dwhhe5dgs/image/upload/v1707118896/houter/assets/bannerBG_hmoltj.png"
               alt=""
             />
 

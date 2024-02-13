@@ -30,9 +30,9 @@ const SignUp = () => {
             .then((res) => {
               if (res.data.status) {
                 toast.success("Signup successfully");
-                navigate("/dashboard/allHouse");
                 reset();
-                localStorage.setItem("user", JSON.stringify(userData));
+                localStorage.clear()
+                navigate("/signIn");
               } else {
                 toast.success("Something went wrong");
               }

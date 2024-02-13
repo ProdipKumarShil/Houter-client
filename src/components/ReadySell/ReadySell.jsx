@@ -6,7 +6,6 @@ import bathroom from "../../assets/icons/bathroom.svg";
 import car from "../../assets/icons/car.svg";
 import staris from "../../assets/icons/starisFloor.svg";
 import phone from "../../assets/icons/phone.svg";
-import home1 from '../../assets/home/bg1.png'
 import home2 from '../../assets/home/sofa.png'
 import flower from '../../assets/home/flower.png'
 import bench from '../../assets/home/bench.png'
@@ -84,7 +83,7 @@ const ReadySell = () => {
 
         {/* img container */}
         <div className="relative">
-          <img className="w-[448px] h-[416px] object-cover ml-auto rounded" src={home1} alt="" />
+          <img className="w-[448px] h-[416px] object-cover ml-auto rounded" src="https://res.cloudinary.com/dwhhe5dgs/image/upload/v1707118895/houter/assets/bg1_pmt6tj.png" alt="" />
           <img className=" absolute hidden md:block right-56 -bottom-14 w-[296px] h-[168px] object-cover" src={home2} alt="" />
           <img className=" absolute hidden md:block right-[115px] -bottom-14 w-[96px] h-[80px] object-cover" src={flower} alt="" />
           <img className=" absolute hidden md:block right-[8px] -bottom-14 w-[96px] h-[80px] object-cover" src={bench} alt="" />
