@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { getUser } from "./getUser"
-const user = getUser()
 
 export const useHousesByEmail = () => {
+  const user = getUser()
   return useQuery({
     queryKey: ['housesByEmail', user.email],
     queryFn: async () => {
