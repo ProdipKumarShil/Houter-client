@@ -16,7 +16,7 @@ const SignIn = () => {
         navigate('/dashboard/profile')
         reset()
       })
-      .catch(e => {
+      .catch(() => {
         toast.error('Something went wrong!')
         reset()
       })

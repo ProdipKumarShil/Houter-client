@@ -27,7 +27,7 @@ const Dprofile = () => {
     <div className="w-full p-4">
       <form className="max-w-96 mx-auto space-y-5" action="">
         <p className="text-h-primary text-[24px] font-bold text-center">Profile</p>
-        <img className="block mx-auto w-32 h-32 rounded-full border-8 border-slate-300" src={user?.img} alt="" />
+        <img className="block mx-auto w-32 h-32 object-cover rounded-full border-8 border-slate-300" src={user?.img} alt="" />
         <input
           className="border border-my-secondary p-3 rounded-lg w-full"
           placeholder="Enter Your Name"

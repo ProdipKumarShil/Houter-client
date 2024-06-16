@@ -26,7 +26,7 @@ const SignUp = () => {
         };
         if (res.data.success) {
           axios
-            .post("http://localhost:5000/user/signUp", userData)
+            .post("https://houter-server.vercel.app/user/signUp", userData)
             .then((res) => {
               if (res.data.status) {
                 toast.success("Signup successfully");
@@ -85,7 +85,7 @@ const SignUp = () => {
         />
         <p className="text-xs">Already have an account <Link className="text-h-secondary underline" to='/signIn'>Sign In</Link></p>
         <button className=" bg-h-secondary text-white py-3 rounded-lg w-full font-bold">
-          Sign In
+          Sign Up
         </button>
       </form>
     </div>

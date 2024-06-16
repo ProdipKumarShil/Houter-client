@@ -17,11 +17,14 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-5 max-w-screen-xl mx-auto">
         <div className="col-span-1 flex flex-col space-y-2">
           <NavLink to='/dashboard/profile' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>Profile</NavLink>
-          {owner ? <>
+          {/* {owner ? <>
             <NavLink to='/dashboard/allHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>All House</NavLink>
             <NavLink to='/dashboard/addHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>Add House</NavLink>
           </> : <NavLink to='/dashboard/bookingHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>Booking</NavLink>
-          }
+          } */}
+            <NavLink to='/dashboard/allHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>All House</NavLink>
+            <NavLink to='/dashboard/addHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>Add House</NavLink>
+           <NavLink to='/dashboard/bookingHouse' className={({isActive}) => isActive ? "w-full bg-h-secondary p-3 rounded-lg text-lg font-bold text-white" : "w-full hover:bg-slate-300 p-3 rounded-lg text-lg font-bold text-black"}>Booking</NavLink>
         </div>
         {/* dashboard pages */}
         <div className="col-span-4 ">
