@@ -25,7 +25,7 @@ const Dbooking = () => {
           <tbody>
             {/* row 1 */}
             {
-              data?.map((booking) => <BookingTable key={booking._id} booking={booking} />)
+              data?.map((booking) => <BookingTable key={booking._id} booking={booking} refetch={refetch}/>)
             }
           </tbody>
         </table>

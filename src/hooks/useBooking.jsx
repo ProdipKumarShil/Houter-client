@@ -7,7 +7,7 @@ export const useBooking = () => {
   return useQuery({
     queryKey: ['booking', user?.email],
     queryFn: async () => {
-      const {data} = await axios.get(`https://houter-server.vercel.app/house/bookingData/${user?.email}`)
+      const {data} = await axios.get(`http://localhost:5000/house/bookingData/${user?.email}`)
       return data
     },
     enabled: !!user?.email

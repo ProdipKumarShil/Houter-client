@@ -1,8 +1,19 @@
+import axios from 'axios'
 import moment from 'moment'
+import { getUser } from '../../hooks/getUser'
 
-const BookingTable = ({booking}) => {
+const BookingTable = ({booking, refetch}) => {
+  const {email} = getUser()
   const {checkIn, checkOut, bed, travellers} = booking
-  const {_id, name, image, address, bathroom, bedroom, city, availableDate, description, number, roomSize, price} = booking.house
+  const {name, image, address, bathroom, bedroom, city, availableDate, description, number, roomSize, price} = booking.house
+  const handleDeleteHouse = () => {
+    axios.delete(`http://localhost:5000/house/deleteBookedHouse?email=${email}&id=${booking._id}`)
+      .then(res => {
+        console.log(email)
+        console.log(res)
+        refetch()
+      })
+  }
   return (
     <>
       <tr>
@@ -35,7 +46,8 @@ const BookingTable = ({booking}) => {
         <th>
           <button
             className="btn btn-ghost btn-xs text-red-500"
-            >
+            onClick={handleDeleteHouse}
+          >
             Cancle Booking
           </button>
         </th>
