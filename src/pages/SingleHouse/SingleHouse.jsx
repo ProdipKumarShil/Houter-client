@@ -2,11 +2,36 @@ import location from "../../assets/icons/location.svg";
 import tick from "../../assets/icons/tick.svg";
 import phone from "../../assets/icons/phone.svg";
 import { Carousel } from "react-responsive-carousel";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import moment from "moment";
+import { useForm } from "react-hook-form";
+import { getUser } from "../../hooks/getUser";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const SingleHouse = () => {
-  const {name, images, address, bathroom, bedroom, city, availableDate, description, number, roomSize, user, price} = useLoaderData()
+  const navigate = useNavigate()
+  const loggedUser = getUser()
+  const {handleSubmit, register, reset} = useForm()
+  const { _id, name, images, address, bathroom, bedroom, city, availableDate, description, number, roomSize, user, price } = useLoaderData()
+  
+  const handleBooking = (value) => {
+    const bookingData = {
+      house: {
+        _id, name, image: images[0], address, bathroom, bedroom, city, availableDate, description, number, roomSize, price,
+      },
+      ...value,
+      email: loggedUser?.email
+    }
+    axios.post('http://localhost:5000/house/bookedHouse', bookingData)
+      .then(res => {
+        toast.success('House booked successfully!')
+        navigate('/dashboard/bookingHouse')
+      })
+      .catch(() => {
+        toast.error('Something went wrong!')
+      })
+  }
   return (
     <div className="max-w-screen-xl mx-auto p-2 grid grid-cols-4 gap-10">
       <div className="col-span-4 md:col-span-3 ">
@@ -31,7 +56,7 @@ const SingleHouse = () => {
               <Items text="Price" info={price + '$'} />
               <Items text="Bathroom" info={bathroom} />
               <Items text="Available Date" info={moment(availableDate).format('DD MMM, YYYY')} />
-              
+
             </div>
             <div className="space-y-[15px] mt-[15px] md:mt-0">
               <Items text="Bedroom" info={bedroom} />
@@ -89,20 +114,68 @@ const SingleHouse = () => {
                 {" "}
                 <img src={phone} alt="" /> <span>Call</span>
               </button>
-              <button className="mt-3 w-full border text-h-primary border-h-primary  py-3 rounded-lg">
+              <button onClick={() => document.getElementById(_id).showModal()} className="mt-3 w-full border text-h-primary border-h-primary  py-3 rounded-lg">
                 Book Now
               </button>
             </div>
           </div>
         </div>
       </div>
+      {/* Booking Modal */}
+      <dialog id={_id} className="modal">
+        <div className="modal-box">
+          <p className="text-[20px] mb-5">Book Hotel</p>
+          <hr />
+          <form onSubmit={handleSubmit(handleBooking)} className="py-5 space-y-4" action="">
+            <div className="">
+              <span className="text-xs mb-2">Check In</span>
+              <input
+                className="border border-my-secondary p-3 rounded-lg w-full"
+                type="date"
+                {...register("checkIn")}
+              />
+            </div>
+            <div className="">
+              <span className="text-xs mb-2">Check Out</span>
+              <input
+                className="border border-my-secondary p-3 rounded-lg w-full"
+                type="date"
+                {...register("checkOut")}
+              />
+            </div>
+            <div className="">
+              <span className="text-xs mb-2">Travellers</span>
+              <input
+                className="border border-my-secondary p-3 rounded-lg w-full"
+                placeholder="eg: 1 or 2"
+                type="number"
+                {...register("travellers")}
+              />
+            </div>
+            <div className="">
+              <span className="text-xs mb-2">Bed</span>
+              <input
+                className="border border-my-secondary p-3 rounded-lg w-full"
+                placeholder="eg: 1 or 2"
+                type="number"
+                {...register("bed")}
+              />
+            </div>
+            <div className="space-x-4">
+              <button type="submit" className="bg-h-secondary active:scale-95 px-4 text-white py-3 rounded-lg  font-bold">Submit</button>
+              <button onClick={() => document.getElementById(_id).close()} type="button" className="btn">Close</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
+      {/* Booking Modal */}
     </div>
   );
 };
 
 export default SingleHouse;
 
-const Items = ({text, info}) => {
+const Items = ({ text, info }) => {
   return (
     <div className="flex items-center gap-4">
       <p className=" text-[#00000080]">{text}</p>
